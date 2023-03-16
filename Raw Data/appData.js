@@ -9,7 +9,9 @@ var z = 1;
 async function main() {
   var index = 0;
   for (const key in dir) {
+    console.log(key);
     index = index + 1;
+    if (index < 48) continue;
     const ids = `${dir[key]}`;
     const myArray = ids.split(",");
     const n = myArray.length;
@@ -55,43 +57,6 @@ async function main() {
       );
     }
   }
-  //   for (let i = 0; i < n; ++i) {
-  // await gplay.datasafety({ appId: id[i] }).then(function x(y) {
-  //   console.log(y);
-  //   gplay.app({ appId: id[i] }).then(function (z) {
-  //     cData[idx["App Name"]] = z.title;
-  //     cData[idx["Genre"]] = z.genre;
-  //   });
-  //   //   console.log(0);
-  //   y.collectedData.forEach((element) => {
-  //     // console.log(1);
-  //     if (idx[element.type] !== undefined) {
-  //       cData[idx[element.type]] = element.optional;
-  //     }
-  //   });
-  //   y.sharedData.forEach((element) => {
-  //     // console.log(2);
-  //     if (idx[element.type] !== undefined) {
-  //       sData[idx[element.type]] = element.optional;
-  //     }
-  //   });
-  //   final.push(cData);
-  //   console.log(cData);
-  //   console.log(final);
-  //   console.log("---------------------------");
-  // });
-  //   }
-  //   let csv = final
-  //     .map((item) => {
-  //       var row = item;
-  //       return row.join(",");
-  //     })
-  //     .join("\n");
-  //   await fs.writeFileSync("./data.csv", csv);
-  //   console.log(final);
-  //   const end = Date.now();
-  //   console.log(`Execution time: ${end - start} ms`);
-  //   console.log(`Execution time: ${(end - start) / n} ms`);
 }
 
 main();
